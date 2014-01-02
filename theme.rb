@@ -88,7 +88,7 @@ match(TitleSlide, "*") do |elements|
 end
 
 match(TitleSlide, Title) do |titles|
-  titles.padding_bottom = @space * 2
+  titles.padding_bottom = @space * 7
 end
 
 match(Slide, HeadLine) do |heads|

@@ -4,13 +4,17 @@
 
     $ bundle install
 
+### 参考
+
+  * [Rabbit - Homebrewでインストール](http://rabbit-shocker.org/ja/install/homebrew.html)
+
 ## 修正
 
     $ vim timetable-and-introduction.rab
 
 ## 確認
 
-    $ rabbit
+    $ ./preview.rb
 
 ## PDF生成
 
