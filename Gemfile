@@ -1,3 +1,3 @@
 source "https://rubygems.org"
 
-gem "rabbit", ">= 2.0.2"
+gem "rabbit", ">= 2.1.1"
