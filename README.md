@@ -14,8 +14,8 @@
 
 ## 確認
 
-    $ ./preview.rb
+    $ rake preview
 
 ## PDF生成
 
-    $ ./output_pdf.rb
+    $ rake pdf
