@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rabbit", ">= 2.1.1"
-gem "rake"
+gem 'rabbit', '>= 2.1.1'
+gem 'rake'
