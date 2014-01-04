@@ -1,0 +1,80 @@
+<%
+  def talk_row(id)
+    talk = talk_by_id(id)
+
+    "#{talk['title'] || comming_soon}, #{talk['speaker']['name']}"
+  end
+
+  def talk_by_id(id)
+    talks.detect {|talk| talk['id'] == id } || raise("Missing talk: id='#{id}'")
+  end
+
+  def comming_soon
+    "(('tag:italic:(近日公開予定)'))"
+  end
+
+  def talks
+    @talks ||= YAML.load(File.read('data/talks.yml'))
+  end
+%>= 札幌市中央区Ruby会議01
+
+: subtitle
+   タイムテーブル＆イントロダクション
+# : author
+#    札幌市中央区Ruby会議01実行委員会
+# : institution
+#    所属
+# : content-source
+#    札幌市中央区Ruby会議01
+# : date
+#    2014/02/08
+# : allotted-time
+#    5m
+: theme
+   .
+
+= 概要
+
+: 本編
+   * 日時: 2014/2/8(土) 13:00 〜 18:00
+   * 会場: かでる2・7
+   * 住所: 札幌市中央区北2条西7丁目 道民活動センター
+   * 参加費用: 1,000 円 (会場にてお支払いください)
+   * 主催: 札幌市中央区Ruby会議01実行委員
+   * 後援: 日本Rubyの会、Ruby札幌
+   * 公式ハッシュタグ: #chuork01
+
+: 懇親会
+   * 日時: 2014/2/8(土) 19:00 〜 21:30
+   * 会場: 北の笑美食 いなせや
+   * 住所: 札幌市中央区南1条西5丁目13番地 日章ビルB1F
+   * 参加費用: 3,500 円 (会場にてお支払いください)
+
+= タイムテーブル
+
+  # RT
+  時間 , 講演内容, 講演者
+  13:00, 開場,  
+  13:20, オープニング,  
+  13:25, <%= talk_row("talk-tricknotes") %>
+  13:50, 休憩,  
+  14:00, <%= talk_row("talk-niku") %>
+  14:25, <%= talk_row("talk-ursm") %>
+  14:50, 休憩,  
+  15:00, <%= talk_row("talk-volpe_hd28v") %>
+  15:25, <%= talk_row("talk-myokoym") %>
+  15:50, 休憩,  
+  16:00, <%= talk_row("talk-shouheiumemoto") %>
+  16:25, <%= talk_row("talk-tmaeda") %>
+  16:50, 休憩,  
+  17:00, LT,  
+  18:00, クロージング,  
+
+<% %w(talk-tricknotes talk-niku talk-ursm talk-volpe_hd28v talk-myokoym talk-shouheiumemoto talk-tmaeda).each do |id| %>
+<%
+  talk = talk_by_id(id)
+  speaker = talk['speaker']
+%>
+= <%= "#{talk['title'] || comming_soon} - #{speaker['name']}" %>
+
+<%= "#{talk['abstract'] || comming_soon}" %><% end %>

@@ -10,7 +10,11 @@
 
 ## 修正
 
-    $ vim timetable-and-introduction.rab
+    $ vim timetable-and-introduction.rab.erb
+
+## 講演詳細を同期し、PDFのソースファイルを生成
+
+    $ rake generate
 
 ## 確認
 
