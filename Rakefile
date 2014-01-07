@@ -1,7 +1,9 @@
 require 'fileutils'
 require 'open-uri'
 require 'erb'
-require 'yaml'
+require 'chuork01/booklet'
+
+include Chuork01::Booklet
 
 WIDTH = ENV['width'] || 500
 HEIGHT = ENV['height'] || (WIDTH * 1.414).to_i
