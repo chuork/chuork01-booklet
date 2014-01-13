@@ -132,6 +132,7 @@ end
 
 match(Slide, "**") do |texts|
   texts.prop_set("size", @xx_small_font_size)
+  texts.vertical_centering = false
 end
 
 #@slide_logo_image ||= "chuork01-icon1.png"
