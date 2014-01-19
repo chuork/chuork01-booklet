@@ -52,15 +52,6 @@
   17:00, LT,  
   18:00, クロージング,  
 
-<% %w(talk-tricknotes talk-niku talk-ursm talk-volpe_hd28v talk-myokoym talk-shouheiumemoto talk-tmaeda).each do |id| %>
-<%
-  talk = talk_by_id(id)
-  speaker = talk['speaker']
-%>
-= <%= "#{talk['title'] || comming_soon} - #{speaker['name']}" %>
-
-<%= "#{talk['abstract'] || comming_soon}" %><% end %>
-
 = 札幌のRubyコミュニティ
 
 : Ruby札幌
