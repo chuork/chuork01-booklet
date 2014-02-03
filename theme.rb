@@ -1,6 +1,9 @@
 #@font_family = find_font_family("ubuntu") || @font_family
 #@monospace_font_family = find_font_family("ubuntu mono") || @monospace_font_family
 
+# line spacing
+@space = 5
+
 base_color = "gray"
 base_dark_color = "darkblue"
 base_dark_background_color = "#c1d2f4"
