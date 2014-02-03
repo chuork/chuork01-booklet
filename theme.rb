@@ -1,8 +1,10 @@
-#@font_family = find_font_family("ubuntu") || @font_family
+@font_family = find_font_family("IPA P明朝") ||
+               find_font_family("IPAPMincho") ||
+               @font_family
 #@monospace_font_family = find_font_family("ubuntu mono") || @monospace_font_family
 
 # line spacing
-@space = 5
+@space = 7
 
 base_color = "gray"
 base_dark_color = "darkblue"
