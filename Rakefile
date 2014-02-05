@@ -53,17 +53,17 @@ task :create_pdf do
 end
 
 task :edit_pdf do
-  width = HEIGHT
-  height = WIDTH
+  width = WIDTH * 2
+  height = HEIGHT
   columns = 2
   page_order = [3, 0, 1, 2]
 
   document = Poppler::Document.new(PDF_PATH)
   pages = page_order.collect {|i| document[i] }
 
-  aspect_ratio = 1.0 * width / height
-  x_ratio = 1.0 * aspect_ratio / columns
-  y_ratio = 1.0 / aspect_ratio
+  #aspect_ratio = 1.0 * width / height
+  #x_ratio = 1.0 * aspect_ratio / columns
+  #y_ratio = 1.0 / aspect_ratio
 
   Cairo::PDFSurface.new("#{PDF_PATH}.tmp", width, height) do |surface|
     Cairo::Context.new(surface) do |context|
@@ -72,7 +72,7 @@ task :edit_pdf do
         x = width / columns * column
         context.save do
           context.translate(x, 0)
-          context.scale(x_ratio, y_ratio)
+          #context.scale(x_ratio, y_ratio)
           context.render_poppler_page(page)
         end
         context.show_page if column == (columns - 1)
